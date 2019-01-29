@@ -9,7 +9,7 @@ This enables Carthage support
 ## Requirements
 
 + iOS 8
-+ macOS 10.10
++ macOS 10.6
 + tvOS 9.0
 + watchOS 2.0
 
