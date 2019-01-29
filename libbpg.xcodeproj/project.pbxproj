@@ -141,8 +141,6 @@
 		32F935AB22002EC2008A4C93 /* old_codec_ids.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F931FD22002CC8008A4C93 /* old_codec_ids.h */; };
 		32F935AC22002EC2008A4C93 /* hevc_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 32F931FE22002CC8008A4C93 /* hevc_filter.c */; };
 		32F935AD22002EC2008A4C93 /* cabac.c in Sources */ = {isa = PBXBuildFile; fileRef = 32F931FF22002CC8008A4C93 /* cabac.c */; };
-		32F935B122002F1A008A4C93 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F9315222002CC8008A4C93 /* config.h */; };
-		32F935B222002F1A008A4C93 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F9315222002CC8008A4C93 /* config.h */; };
 		32F935B32200307B008A4C93 /* libavutil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9351A22002E8F008A4C93 /* libavutil.framework */; };
 		32F935BA22003210008A4C93 /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9358622002EBA008A4C93 /* libavcodec.framework */; };
 		32F935BB22003210008A4C93 /* libavutil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9351A22002E8F008A4C93 /* libavutil.framework */; };
@@ -649,7 +647,6 @@
 				32F9357F22002EAB008A4C93 /* avstring.h in Headers */,
 				32F9356222002EAB008A4C93 /* cpu.h in Headers */,
 				32F9353522002EAB008A4C93 /* motion_vector.h in Headers */,
-				32F935B122002F1A008A4C93 /* config.h in Headers */,
 				32F9355522002EAB008A4C93 /* common.h in Headers */,
 				32F9353B22002EAB008A4C93 /* xtea.h in Headers */,
 				32F9356B22002EAB008A4C93 /* colorspace.h in Headers */,
@@ -676,7 +673,6 @@
 				32F9359822002EC2008A4C93 /* hevc.h in Headers */,
 				32F935A322002EC2008A4C93 /* get_bits.h in Headers */,
 				32F935A522002EC2008A4C93 /* put_bits.h in Headers */,
-				32F935B222002F1A008A4C93 /* config.h in Headers */,
 				32F9359522002EC2008A4C93 /* version.h in Headers */,
 				32F935A822002EC2008A4C93 /* bswapdsp.h in Headers */,
 				32F935AB22002EC2008A4C93 /* old_codec_ids.h in Headers */,
@@ -913,7 +909,6 @@
 		329CC0B122003D15001FB68F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -927,7 +922,6 @@
 		329CC0B222003D15001FB68F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -938,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -980,6 +975,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 					"HAVE_AV_CONFIG_H=1",
+					"USE_VAR_BIT_DEPTH=1",
+					"USE_PRED=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1006,6 +1003,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1042,7 +1040,11 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "HAVE_AV_CONFIG_H=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"HAVE_AV_CONFIG_H=1",
+					"USE_VAR_BIT_DEPTH=1",
+					"USE_PRED=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1082,7 +1084,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libbpg;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
@@ -1108,7 +1110,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libbpg;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
@@ -1135,7 +1137,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libavutil;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1162,7 +1164,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libavutil;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1187,7 +1189,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libavcodec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1213,7 +1215,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = org.SDWebImage.libavcodec;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
