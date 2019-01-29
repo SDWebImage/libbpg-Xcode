@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		329CC0B022003D15001FB68F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 329CC0AF22003D15001FB68F /* main.m */; };
+		329CC0B422003D28001FB68F /* libbpg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F92CBD22002BCE008A4C93 /* libbpg.framework */; };
+		329CC0B522003DAE001FB68F /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9358622002EBA008A4C93 /* libavcodec.framework */; };
+		329CC0B622003DB1001FB68F /* libavutil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9351A22002E8F008A4C93 /* libavutil.framework */; };
 		32F9337522002CC8008A4C93 /* libbpg.c in Sources */ = {isa = PBXBuildFile; fileRef = 32F9315122002CC8008A4C93 /* libbpg.c */; };
 		32F9337622002CC8008A4C93 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F9315222002CC8008A4C93 /* config.h */; };
 		32F9351422002D8E008A4C93 /* libbpg.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F9351322002D8E008A4C93 /* libbpg.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -168,7 +172,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		329CC0AB22003D15001FB68F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		329CC0AD22003D15001FB68F /* libbpgExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libbpgExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		329CC0AF22003D15001FB68F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32F92CBD22002BCE008A4C93 /* libbpg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libbpg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F930F222002CC8008A4C93 /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
 		32F930F322002CC8008A4C93 /* intfloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intfloat.h; sourceTree = "<group>"; };
@@ -306,6 +324,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		329CC0AA22003D15001FB68F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329CC0B622003DB1001FB68F /* libavutil.framework in Frameworks */,
+				329CC0B522003DAE001FB68F /* libavcodec.framework in Frameworks */,
+				329CC0B422003D28001FB68F /* libbpg.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32F92CBA22002BCE008A4C93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,11 +361,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		329CC0AE22003D15001FB68F /* libbpgExample */ = {
+			isa = PBXGroup;
+			children = (
+				329CC0AF22003D15001FB68F /* main.m */,
+			);
+			path = libbpgExample;
+			sourceTree = "<group>";
+		};
 		32F92CB322002BCE008A4C93 = {
 			isa = PBXGroup;
 			children = (
 				32F930EF22002CC8008A4C93 /* libbpg */,
 				32F92CC822002C32008A4C93 /* Xcode */,
+				329CC0AE22003D15001FB68F /* libbpgExample */,
 				32F92CBE22002BCE008A4C93 /* Products */,
 				32F935AE22002ED3008A4C93 /* Frameworks */,
 			);
@@ -349,6 +386,7 @@
 				32F92CBD22002BCE008A4C93 /* libbpg.framework */,
 				32F9351A22002E8F008A4C93 /* libavutil.framework */,
 				32F9358622002EBA008A4C93 /* libavcodec.framework */,
+				329CC0AD22003D15001FB68F /* libbpgExample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -660,6 +698,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		329CC0AC22003D15001FB68F /* libbpgExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 329CC0B322003D15001FB68F /* Build configuration list for PBXNativeTarget "libbpgExample" */;
+			buildPhases = (
+				329CC0A922003D15001FB68F /* Sources */,
+				329CC0AA22003D15001FB68F /* Frameworks */,
+				329CC0AB22003D15001FB68F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libbpgExample;
+			productName = libbpgExample;
+			productReference = 329CC0AD22003D15001FB68F /* libbpgExample */;
+			productType = "com.apple.product-type.tool";
+		};
 		32F92CBC22002BCE008A4C93 /* libbpg */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F92CC522002BCE008A4C93 /* Build configuration list for PBXNativeTarget "libbpg" */;
@@ -726,6 +781,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = SDWebImage;
 				TargetAttributes = {
+					329CC0AC22003D15001FB68F = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					32F92CBC22002BCE008A4C93 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -752,6 +810,7 @@
 				32F92CBC22002BCE008A4C93 /* libbpg */,
 				32F9351922002E8F008A4C93 /* libavutil */,
 				32F9358522002EBA008A4C93 /* libavcodec */,
+				329CC0AC22003D15001FB68F /* libbpgExample */,
 			);
 		};
 /* End PBXProject section */
@@ -781,6 +840,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		329CC0A922003D15001FB68F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329CC0B022003D15001FB68F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32F92CB922002BCE008A4C93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -843,6 +910,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		329CC0B122003D15001FB68F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		329CC0B222003D15001FB68F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		32F92CC322002BCE008A4C93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1133,6 +1224,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		329CC0B322003D15001FB68F /* Build configuration list for PBXNativeTarget "libbpgExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329CC0B122003D15001FB68F /* Debug */,
+				329CC0B222003D15001FB68F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32F92CB722002BCE008A4C93 /* Build configuration list for PBXProject "libbpg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
