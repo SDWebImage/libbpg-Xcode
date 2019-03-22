@@ -1,10 +1,15 @@
 # libbpg + Xcode
 
+[![CI Status](http://img.shields.io/travis/SDWebImage/libbpg-Xcode.svg?style=flat)](https://travis-ci.org/SDWebImage/libbpg-Xcode)
+[![Version](https://img.shields.io/cocoapods/v/libbpg.svg?style=flat)](http://cocoapods.org/pods/libbpg)
+[![License](https://img.shields.io/cocoapods/l/libbpg.svg?style=flat)](http://cocoapods.org/pods/libbpg)
+[![Platform](https://img.shields.io/cocoapods/p/libbpg.svg?style=flat)](http://cocoapods.org/pods/libbpg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/SDWebImage/libbpg-Xcode)
+
 A wrapper for [libbpg](https://github.com/mirrorer/libbpg) + Xcode project.
 This enables Carthage support
 
-[![CI Status](http://img.shields.io/travis/SDWebImage/libbpg-Xcode.svg?style=flat)](https://travis-ci.org/SDWebImage/libbpg-Xcode)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/SDWebImage/libbpg-Xcode)
+This repo also including the CocoaPods's spec file to use libbpg.
 
 ## Requirements
 
@@ -15,10 +20,20 @@ This enables Carthage support
 
 ## Installation
 
+### Carthage
+
 libbpg is (via this repo) available through [Carthage](https://github.com/Carthage/Carthage).
 
 ```
 github "SDWebImage/libbpg-Xcode"
+```
+
+### CocoaPods
+
+libbpg is available through [CocoaPods](https://github.com/CocoaPods/CocoaPods).
+
+```
+pod 'libbpg'
 ```
 
 ## Usage
